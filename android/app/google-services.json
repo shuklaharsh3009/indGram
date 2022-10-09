@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1085153158369",
+    "project_id": "indgram-26bca",
+    "storage_bucket": "indgram-26bca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085153158369:android:627e043f1b2033461b03a0",
+        "android_client_info": {
+          "package_name": "com.example.indgram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085153158369-f7kja2c69ojg3dnpo8dur186hqj7hi04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHaAvKanm1L_WAKPesQWK6vlWg-_ODgww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085153158369-f7kja2c69ojg3dnpo8dur186hqj7hi04.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
