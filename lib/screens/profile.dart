@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:indgram/main.dart';
@@ -18,7 +17,6 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   int _page = 0;
-  bool _color = false;
   late PageController pageController;
   FirebaseAuth user = FirebaseAuth.instance;
   String currentUserUid = '';
@@ -76,7 +74,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             backgroundColor: primaryColor,
             padding: EdgeInsets.all( screenWidth!*0.02 ),
             gap: screenWidth!*0.02,
-            tabBackgroundColor: _color? Colors.amber.shade100 : Colors.green.shade100,
             iconSize: screenHeight!*0.04,
             tabs: [
               // Profile
@@ -90,11 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: screenHeight!*0.025,
                 ),
-                onPressed: (){
-                  setState(() {
-                    _color = false;
-                  });
-                },
+                backgroundColor: Colors.green.shade100,
               ),
               // Search
               GButton(
@@ -107,11 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: screenHeight!*0.025,
                 ),
-                onPressed: (){
-                  setState(() {
-                    _color = true;
-                  });
-                },
+                backgroundColor: Colors.amber.shade100,
               ),
               // Feed/Home
               GButton(
@@ -124,11 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: screenHeight!*0.025,
                 ),
-                onPressed: (){
-                  setState(() {
-                    _color = false;
-                  });
-                },
+                backgroundColor: Colors.green.shade100,
               ),
               // Add Post
               GButton(
@@ -141,65 +126,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: screenHeight!*0.025,
                 ),
-                onPressed: (){
-                  setState(() {
-                    _color = true;
-                  });
-                },
+                backgroundColor: Colors.amber.shade100,
               ),
             ],
             onTabChange: navigationTapped,
           ),
         ),
-        // BottomNavigationBar(
-        //   elevation: 0,
-        //   iconSize: screenHeight! * 0.04,
-        //   backgroundColor: primaryColor,
-
-        //   items: [
-        //     // Profile tab
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.person,
-        //           color: _page == 0 ? Colors.amber : Colors.grey.shade600,
-        //         ),
-        //         label: "",
-        //         backgroundColor: primaryColor),
-        //     // Search tab
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.search,
-        //           color: _page == 1 ? Colors.amber : Colors.grey.shade600,
-        //         ),
-        //         label: "",
-        //         backgroundColor: primaryColor),
-        //     // Home tab
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.home_filled,
-        //           color: _page == 2 ? Colors.amber : Colors.grey.shade600,
-        //         ),
-        //         label: "",
-        //         backgroundColor: primaryColor),
-        //     // Liked tab
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.favorite,
-        //           color: _page == 3 ? Colors.amber : Colors.grey.shade600,
-        //         ),
-        //         label: "",
-        //         backgroundColor: primaryColor),
-        //     // Add Post tab
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.add_circle,
-        //           color: _page == 4 ? Colors.amber : Colors.grey.shade600,
-        //         ),
-        //         label: "",
-        //         backgroundColor: primaryColor),
-        //   ],
-        //   onTap: navigationTapped,
-        // ),
       ),
     );
   }

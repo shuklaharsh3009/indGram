@@ -13,7 +13,7 @@ double? screenHeight;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(IndGram());
+  runApp( const IndGram() );
 }
 
 class IndGram extends StatelessWidget {
