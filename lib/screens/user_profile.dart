@@ -2,15 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:indgram/main.dart';
-import 'package:indgram/providers/user_providers.dart';
 import 'package:indgram/resources/auth_method.dart';
 import 'package:indgram/resources/firestor_methods.dart';
 import 'package:indgram/screens/edit_profile.dart';
 import 'package:indgram/screens/login_screen.dart';
 import 'package:indgram/utils/colors.dart';
 import 'package:indgram/utils/util.dart';
-import 'package:indgram/widgets/custom_button.dart';
-import 'package:provider/provider.dart';
 
 class UserProfileScreen extends StatefulWidget {
   final String uid;

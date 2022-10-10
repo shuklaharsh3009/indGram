@@ -67,6 +67,7 @@ class AuthMethods {
       if( email.isNotEmpty || password.isNotEmpty ){
         await _auth.signInWithEmailAndPassword(email: email, password: password);
         res = "Success";
+
       }
       else {
         res = "Please Enter all the fields!";

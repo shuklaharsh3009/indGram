@@ -1,6 +1,6 @@
 # indgram
 
-A new Flutter project.
+A Instagram inspired Social Media App.
 
 ## Getting Started
 
