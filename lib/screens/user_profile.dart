@@ -8,6 +8,7 @@ import 'package:indgram/screens/edit_profile.dart';
 import 'package:indgram/screens/login_screen.dart';
 import 'package:indgram/utils/colors.dart';
 import 'package:indgram/utils/util.dart';
+import 'package:indgram/widgets/post_card.dart';
 
 class UserProfileScreen extends StatefulWidget {
   final String uid;
@@ -342,16 +343,21 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             DocumentSnapshot snap =
                                 (snapshot.data! as dynamic).docs[index];
 
-                            return Container(
-                              margin: EdgeInsets.all(screenWidth! * 0.015),
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(screenWidth! * 0.05)),
-                                ),
-                                image: DecorationImage(
-                                  image: NetworkImage(snap['postUrl']),
-                                  fit: BoxFit.cover,
+                            return GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).push( MaterialPageRoute(builder: (context) => SinglePostScreen(snap: snap ) ));
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(screenWidth! * 0.015),
+                                decoration: ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(screenWidth! * 0.05)),
+                                  ),
+                                  image: DecorationImage(
+                                    image: NetworkImage(snap['postUrl']),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             );
@@ -363,6 +369,38 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 ),
               ),
             ),
+    );
+  }
+}
+
+
+//Single Post Screens
+class SinglePostScreen extends StatefulWidget {
+  final snap;
+  const SinglePostScreen({super.key, required this.snap});
+
+  @override
+  State<SinglePostScreen> createState() => _SinglePostScreenState();
+}
+
+class _SinglePostScreenState extends State<SinglePostScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: primaryColor,
+          title: const Text('Post'),
+          titleTextStyle: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
+          automaticallyImplyLeading: true,
+          foregroundColor: Colors.black,
+        ),
+        body: PostCard(snap: widget.snap),
+      ),
     );
   }
 }

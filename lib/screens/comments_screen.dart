@@ -53,6 +53,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
+        foregroundColor: Colors.black,
         elevation: 0,
         title: const Text(
           'Comments',
@@ -61,6 +62,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
           color: Colors.black,
         ),
         centerTitle: false,
+        automaticallyImplyLeading: true,
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -70,7 +72,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
             .orderBy('datePublished', descending: true)
             .snapshots(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState == ConnectionState.waiting ) {
             return const Center(
               child: CircularProgressIndicator(
                 color: Colors.amber,
@@ -78,11 +80,19 @@ class _CommentsScreenState extends State<CommentsScreen> {
             );
           }
 
-          return ListView.builder(
-            itemCount: ( snapshot.data! as dynamic ).docs.length,
-            itemBuilder: (ctx, index) => CommentCard(
-              snap: ( snapshot.data! as dynamic ).docs[index],
+          return GridView.builder(
+            shrinkWrap: true,
+            primary: false,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              childAspectRatio: 5,
             ),
+            itemCount: ( snapshot.data! as dynamic ).docs.length,
+            itemBuilder: (context, index) {
+              DocumentSnapshot snap = (snapshot.data! as dynamic).docs[index];
+              
+              return SizedBox(child: CommentCard(snap: snap));
+            }
           );
         },
       ),

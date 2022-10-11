@@ -6,6 +6,7 @@ import 'package:indgram/main.dart';
 import 'package:indgram/models/users.dart';
 import 'package:indgram/providers/user_providers.dart';
 import 'package:indgram/resources/firestor_methods.dart';
+import 'package:indgram/screens/profile.dart';
 import 'package:indgram/screens/user_profile.dart';
 import 'package:indgram/utils/util.dart';
 import 'package:provider/provider.dart';
@@ -86,7 +87,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
           'Posted!',
         );
         clearImage();
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => UserProfileScreen( uid: FirebaseAuth.instance.currentUser!.uid ,) ));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ProfileScreen() ));
       } else {
         showSnackBar(context, res);
       }

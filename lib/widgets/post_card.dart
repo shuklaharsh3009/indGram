@@ -1,6 +1,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:indgram/main.dart';
 import 'package:indgram/providers/user_providers.dart';
 import 'package:indgram/resources/firestor_methods.dart';
 import 'package:indgram/screens/comments_screen.dart';
@@ -96,8 +97,8 @@ class _PostCardState extends State<PostCard> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8,
+                    padding: EdgeInsets.only(
+                      left: screenHeight!*0.01,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -173,7 +174,7 @@ class _PostCardState extends State<PostCard> {
               alignment: Alignment.center,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.35,
+                  height: screenHeight! * 0.35,
                   width: double.infinity,
                   child: Image.network(
                     widget.snap['postUrl'].toString(),

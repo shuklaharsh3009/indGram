@@ -158,6 +158,16 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 SizedBox(height: screenHeight! * 0.05),
                 //Full Name input textfield
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Full Name',
+                    style: TextStyle(
+                      color: Colors.grey.shade600
+                    ),
+                  ),
+                ),
+                SizedBox(height: screenHeight! * 0.01 ),
                 TextFieldInput(
                   textEditingController: _fullNameController,
                   hintText: fullName,
@@ -169,6 +179,17 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 SizedBox(height: screenHeight! * 0.03),
                 //UserName input textfield
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Username',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.grey.shade600
+                    ),
+                  ),
+                ),
+                SizedBox(height: screenHeight! * 0.01 ),
                 TextFieldInput(
                   textEditingController: _usernameController,
                   hintText: username,
@@ -180,31 +201,61 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 SizedBox(height: screenHeight! * 0.03),
                 //Bio input textfield
-                TextFieldInput(
-                  textEditingController: _bioController,
-                  hintText: bio,
-                  textInputType: TextInputType.text,
-                  icon: const Icon(
-                    Icons.beenhere_outlined,
-                    color: Colors.black,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Bio',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.grey.shade600
+                    ),
                   ),
                 ),
-                SizedBox(height: screenHeight! * 0.03),
-                //Sign Up button
-                InkWell(
-                  onTap: updateUserInfo,
-                  child: CustomButton(
-                    text: _isSaving? "Saving..." :"Done",
-                    width: screenWidth! * 0.86,
-                    color: Colors.amber,
-                    fontSize: screenHeight! * 0.036,
-                    fontWeight: FontWeight.bold,
+                SizedBox(height: screenHeight! * 0.01 ),
+                TextField(
+                  controller: _bioController,
+                  keyboardType: TextInputType.multiline,
+                  minLines: 1,
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.beenhere_outlined, color: Colors.black,),
+                    hintText: bio,
+                    border: OutlineInputBorder(
+                      borderSide: Divider.createBorderSide(context),
+                      borderRadius: BorderRadius.circular(screenWidth!*0.01),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: Divider.createBorderSide(context),
+                      borderRadius: BorderRadius.circular(screenWidth!*0.01),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: Divider.createBorderSide(context),
+                      borderRadius: BorderRadius.circular(screenWidth!*0.01),
+                    ),
+                    filled: true,
+                    contentPadding: EdgeInsets.all(screenWidth!*0.005),
                   ),
                 ),
               ],
             ),
           ),
               ),
+              bottomNavigationBar: 
+                //Sign Up button
+                Container(
+                  height: screenHeight!*0.11,
+                  padding: EdgeInsets.all( screenWidth!*0.03 ),
+                  child: InkWell(
+                    onTap: updateUserInfo,
+                    child: CustomButton(
+                      text: _isSaving? "Saving..." :"Done",
+                      width: screenWidth! * 0.86,
+                      color: Colors.amber,
+                      fontSize: screenHeight! * 0.032,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
         )),
     ); 
   }

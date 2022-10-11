@@ -35,8 +35,8 @@ dependencies:
   firebase_storage: ^10.3.10
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
   flutter_native_splash: ^2.2.9
-  
   flutter_staggered_grid_view: ^0.6.2
   flutter_svg: ^1.1.5
   google_nav_bar: ^5.0.6
@@ -50,9 +50,24 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter_native_splash: 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 16 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icon.png"
+    background_color: "#ffffff"
+    theme_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+
+flutter_native_splash:
   image: assets/splash.png
-  color: '#ffffff' 
+  color: '#ffffff'
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
