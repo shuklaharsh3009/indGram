@@ -1,12 +1,10 @@
 # indgram
 
-A Instagram inspired Social Media App.
-Install on Android device -> <a href="https://drive.google.com/file/d/1srFGJnmLDrUsxL0ijFitDEG70fLCLDxp/view?usp=sharing">[Click here to Download the APK]</a>
+A Instagram inspired Social Media App.<br>
+Install on Android device -> <a href="https://drive.google.com/file/d/1srFGJnmLDrUsxL0ijFitDEG70fLCLDxp/view?usp=sharing">[Click here to Download the APK]</a> <br>
 IOS app coming soon...
-shade800
 ## Screen Shots of the App
-
-1. Login Screen <br>
+1. Login Screen 
 <img src="https://user-images.githubusercontent.com/100336788/195098426-e374ed92-ea25-41dc-8da2-c2e271fb147d.png" height="200px"/>
 2. Sign Up Screen <br>
 <img src="https://user-images.githubusercontent.com/100336788/195110133-6b682f04-26fc-4094-b313-effa05cc571d.png" height="200px"/>
