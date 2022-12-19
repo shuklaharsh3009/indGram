@@ -1,4 +1,4 @@
-# indgram
+# indGram
 
 A Instagram inspired Social Media App.<br>
 Install on Android device -> <a href="https://drive.google.com/file/d/1srFGJnmLDrUsxL0ijFitDEG70fLCLDxp/view?usp=sharing">[Click here to Download the APK]</a> <br>
